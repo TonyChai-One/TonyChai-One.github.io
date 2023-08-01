@@ -1,0 +1,832 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>设计价值观 | Welcome to TonyChai's Blog</title><meta name="author" content="YSY"><meta name="copyright" content="YSY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="⚔️ 为什么讲？我们项目中有些功能设计里有些不太合理，不太科学的地方，站在前端角度来讲，结合大厂一些通用性的一些东西，中后台系统这个通用性都比较强的，值得我们参考借鉴学习。 📖 学习了阿里和字节的设计价值观，关于中后天常见的交互场景设计场景，整理了一下，便于我们之后学习使用，并在这个过程中发现了套件一些问题。一般开发过程中，产品设计是由产品主导的，但作为开发人员来讲是有建议权和话语权的，对于不合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计价值观">
+<meta property="og:url" content="http://example.com/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/index.html">
+<meta property="og:site_name" content="Welcome to TonyChai&#39;s Blog">
+<meta property="og:description" content="⚔️ 为什么讲？我们项目中有些功能设计里有些不太合理，不太科学的地方，站在前端角度来讲，结合大厂一些通用性的一些东西，中后台系统这个通用性都比较强的，值得我们参考借鉴学习。 📖 学习了阿里和字节的设计价值观，关于中后天常见的交互场景设计场景，整理了一下，便于我们之后学习使用，并在这个过程中发现了套件一些问题。一般开发过程中，产品设计是由产品主导的，但作为开发人员来讲是有建议权和话语权的，对于不合">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/antd.png">
+<meta property="article:published_time" content="2023-07-26T08:49:14.000Z">
+<meta property="article:modified_time" content="2023-08-01T03:34:53.773Z">
+<meta property="article:author" content="YSY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/antd.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '设计价值观',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-01 11:34:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/zaizai.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/antd.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Welcome to TonyChai's Blog"><img class="site-icon" src="/img/zaizai.png"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">设计价值观</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-26T08:49:14.000Z" title="发表于 2023-07-26 16:49:14">2023-07-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-01T03:34:53.773Z" title="更新于 2023-08-01 11:34:53">2023-08-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="设计价值观"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note blue icon-padding flat"><i class="note-icon fas fa-bullhorn"></i><p>⚔️ 为什么讲？我们项目中有些功能设计里有些不太合理，不太科学的地方，站在前端角度来讲，结合大厂一些通用性的一些东西，中后台系统这个通用性都比较强的，值得我们参考借鉴学习。</p>
+<p>📖 学习了阿里和字节的设计价值观，关于中后天常见的交互场景设计场景，整理了一下，便于我们之后学习使用，并在这个过程中发现了套件一些问题。一般开发过程中，产品设计是由产品主导的，但作为开发人员来讲<br>是有建议权和话语权的，对于不合理不科学的需求，我们都可以提出异议，再者加上我们现在的需求大部分都是产品，痛点是没有一个确定性的设计在里边，设计的主导在于后端，所以作为所有的开发人员来讲都应该了解这个<br>这样可以帮助我们设计出来一些好的东西，第二产品为了省事，大部分是根据我们设计的的东西或者我们已经把代码开发完之后，有个demo了，在这个demo的基础上，在进行微调，就导致需求的主导因素在于我们开发人员，如果我们不懂这个设计出来的东西就很怪。</p>
+<p>🦋 什么情况不用考虑？当所有需求通过功能到ui到交互，都由产品去专业的把握，那么我们就可以不去学这个，但是对于我们目前工作流程来说是不可行的，主导需求压力在于我们开发人员，因此才有了今天的内容，大家可以一起学习一下。</p>
+<p>🚀 字节设计价值观：<a target="_blank" rel="noopener" href="https://arco.design/docs/spec/values-of-arcodesign">https://arco.design/docs/spec/values-of-arcodesign</a></p>
+<p>🚀 阿里设计价值观：<a target="_blank" rel="noopener" href="https://ant.design/docs/spec/values-cn">https://ant.design/docs/spec/values-cn</a></p>
+</div>
+
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690794814190.png" class>
+
+<div class="note red icon-padding disabled"><i class="note-icon fas fa-fan"></i><h2 id="从设计价值观上看"><a href="#从设计价值观上看" class="headerlink" title="从设计价值观上看"></a>从设计价值观上看</h2></div>
+
+<div class="note primary no-icon flat"><h3 id="清晰"><a href="#清晰" class="headerlink" title="清晰"></a>清晰</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：节约用户脑力和体力，让人机交互行为更自然，让用户操作的目的性更明确，提高效率。</li>
+</ul>
+<div class="note primary no-icon flat"><h3 id="一致"><a href="#一致" class="headerlink" title="一致"></a>一致</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：一致的外观和交互，保持面向用户的熟悉感，能提升易学性，降低认知和操作成本，产生品牌依赖感。</li>
+</ul>
+<mark class="hl-label orange">不推荐示例</mark> 
+
+<p>子系统及套件色彩的不确定性<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690425046949.png" class></p>
+<p>UI风格的不确定性<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690425315545.png" class></p>
+<p>提示规范不统一<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690531784605.png" class></p>
+<p>字体大小未规范化统一<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690532360533.png" class></p>
+<p>弹框使用不确定性<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786648638.png" class></p>
+<div class="note primary no-icon flat"><h3 id="意义感"><a href="#意义感" class="headerlink" title="意义感"></a>意义感</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：能让用户持续沉浸在工作的心流中，获得富有成就感的工作体验。</li>
+</ul>
+<div class="note primary no-icon flat"><h3 id="生长性"><a href="#生长性" class="headerlink" title="生长性"></a>生长性</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：产品设计时，不应将用户和系统独立开来，应作为一个动态发展的共同体来思考，确保其足够的灵活、包容，充满生命力。</li>
+</ul>
+<div class="note red icon-padding disabled"><i class="note-icon fas fa-fan"></i><h2 id="从设计原则上看"><a href="#从设计原则上看" class="headerlink" title="从设计原则上看"></a>从设计原则上看</h2></div>
+
+<div class="note primary no-icon flat"><h3 id="及时反馈"><a href="#及时反馈" class="headerlink" title="及时反馈"></a>及时反馈</h3></div>
+
+<ul>
+<li>系统应该让用户知道目前的状态, 并及时给予相对应的反馈。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427201802.png" class>
+
+<div class="note primary no-icon flat"><h3 id="贴近现实"><a href="#贴近现实" class="headerlink" title="贴近现实"></a>贴近现实</h3></div>
+
+<ul>
+<li>系统应该用用户的语言，用词，短语和用户熟悉的概念，而不是系统术语。遵循现实世界的惯例，让信息符合自然思考逻辑。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427228746.png" class>
+
+<div class="note primary no-icon flat"><h3 id="系统一致性"><a href="#系统一致性" class="headerlink" title="系统一致性"></a>系统一致性</h3></div>
+
+<ul>
+<li>同一用语、功能、操作保持一致。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427248562.png" class>
+
+<div class="note primary no-icon flat"><h3 id="防止错误发生"><a href="#防止错误发生" class="headerlink" title="防止错误发生"></a>防止错误发生</h3></div>
+
+<ul>
+<li>比出现错误信息提示更好的是更用心的设计防止这类问题发生。在用户选择动作发生之前，就要防止用户容易混淆或者错误的选择。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427265356.png" class>
+
+<div class="note primary no-icon flat"><h3 id="遵从习惯"><a href="#遵从习惯" class="headerlink" title="遵从习惯"></a>遵从习惯</h3></div>
+
+<ul>
+<li>尽量减少用户对操作目标的记忆负荷，动作和选项都应该是可见的。比如填完表单，下一步应该生成表单，而不是下一步就是完成。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427280545.png" class>
+
+<div class="note primary no-icon flat"><h3 id="突出重点"><a href="#突出重点" class="headerlink" title="突出重点"></a>突出重点</h3></div>
+
+<ul>
+<li>用户的浏览动作不是读，不是看，而是扫。设计中应该突出重点，弱化和剔除无关信息。重要对话中不应该包含无关紧要的信息。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427296741.png" class>
+
+<div class="note primary no-icon flat"><h3 id="错误帮助"><a href="#错误帮助" class="headerlink" title="错误帮助"></a>错误帮助</h3></div>
+
+<ul>
+<li>错误信息应该用语言表达而不是比如404的代码。需要准确地反应问题所在并提出建设性的解决方案, 帮助用户从错误中恢复将损失降到最低, 提供详尽的说明文字和指导方向。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427311795.png" class>
+
+<div class="note primary no-icon flat"><h3 id="人性化帮助"><a href="#人性化帮助" class="headerlink" title="人性化帮助"></a>人性化帮助</h3></div>
+
+<ul>
+<li>如果系统不需要使用帮助文档是最好的，但是有必要提供帮助和文档。帮助性提示最好的方式是：1、无需提示；2、一次性提示；3、常驻提示；4；帮助文档</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690427326312.png" class>
+
+<div class="note red icon-padding disabled"><i class="note-icon fas fa-fan"></i><h2 id="从设计模式上看"><a href="#从设计模式上看" class="headerlink" title="从设计模式上看"></a>从设计模式上看</h2></div>
+
+<div class="note primary no-icon flat"><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3></div>
+
+<ul>
+<li><h4 id="色彩"><a href="#色彩" class="headerlink" title="色彩"></a>色彩</h4><ul>
+<li><p>品牌色</p>
+<ul>
+<li>品牌色是体现产品特性和传播理念最直观的视觉元素之一。</li>
+<li>在色彩选取时，需要先明确品牌色在界面中的使用场景及范围。</li>
+<li>应用场景包括：关键行动点，操作状态、重要信息高亮，图形化等场景。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690795437317.png" class>
+</li>
+<li><p>功能色</p>
+<ul>
+<li>功能色代表了明确的信息以及状态，比如成功、警告、出错、失败等。</li>
+<li>功能色的选取需要遵守用户对色彩的基本认知。</li>
+<li>也不会因为有过多的自定义干扰用户的认知体验。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690795462434.png" class>
+</li>
+<li><p>中性色</p>
+<ul>
+<li>中性色主要被大量的应用在界面的文字部分，此外背景、边框、分割线等场景中也非常常见。</li>
+<li>产品中性色的定义需要考虑深色背景以及浅色背景的差异，同时结合 WCAG 2.0 标准。</li>
+</ul>
+<p>按照透明度的方式展现的中性色<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690795594103.png" class></p>
+</li>
+</ul>
+</li>
+<li><h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
+<li><p>主字体</p>
+<ul>
+<li>基于电脑显示器阅读距离（50 cm）以及最佳阅读角度（0.3），主字体为 14时，将保证在多数常用显示器上的用户阅读效率最佳。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690795673170.png" class>
+</li>
+<li><p>字体颜色</p>
+<ul>
+<li>文本颜色如果和背景颜色太接近就会难以阅读。考虑到无障碍设计的需求，参考 WCAG 的标准，将正文文本、标题和背景色之间保持在了 7:1 以上的 AAA 级对比度。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690795594103.png" class>
+</li>
+<li><p>构建字体系统的建议</p>
+<ul>
+<li>建立体系化的设计思路：对主、次、辅助、标题、展示等类别的字体做统一的规划，再落地到具体场景中进行微调。</li>
+<li>少即是多： 在视觉展现上能够用尽量少的样式去实现设计目的。避免毫无意义的使用大量字阶、颜色、字重强调视觉重点或对比关系。</li>
+<li>尝试让字体像音符一样跳跃： 在需要拉开差距的时候可以尝试在字阶表中跳跃地选择字体大小，会令字阶之间产生一种微妙的韵律感。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="note primary no-icon flat"><h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：指导用户采取你希望他们采取的行动，帮助用户避免犯错。
+</li>
+<li><h4 id="常规按钮"><a href="#常规按钮" class="headerlink" title="常规按钮"></a>常规按钮</h4><img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690782697425.png" class>
+
+<ul>
+<li>次按钮：常规按钮，用于非主要动作。如果不确定选择哪种按钮，次按钮永远是最安全的选择。</li>
+<li>主按钮：突出“完成”、“推荐”类操作；一个按钮区最多使用一个主按钮。</li>
+<li>文字按钮：弱化的按钮，采用更轻量的按钮样式，可用于需大面积展示按钮场景，例如表格组件中的操作列。</li>
+<li>图标按钮：图标提供视觉线索，避免逐字阅读按钮文案，更高效地使用界面。</li>
+<li>在按钮中添加图标：用于对按钮含义补充解释，提高按钮识别效率。</li>
+</ul>
+</li>
+<li><h4 id="特殊按钮"><a href="#特殊按钮" class="headerlink" title="特殊按钮"></a>特殊按钮</h4><ul>
+<li>虚线按钮：用于引导用户在一个区域中添加内容。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690782902532.png" class>
+
+<ul>
+<li>危险按钮：警示用户该操作存在风险。</li>
+</ul>
+<p>用户的主要意图是删除，通过红色警示该操作存在风险。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690782985599.png" class></p>
+<p>当系统不推荐用户执行删除操作时，可将取消按钮设置为主按钮。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690797309536.png" class></p>
+</li>
+<li><h4 id="按钮强调"><a href="#按钮强调" class="headerlink" title="按钮强调"></a>按钮强调</h4><ul>
+<li>常规按钮类型呈现出不同的强调程度，使用者可以据此变化出合适的按钮类型</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690783830277.png" class>
+
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690859861222.png" class>
+
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690859690270.png" class>
+</li>
+<li><h4 id="按钮顺序"><a href="#按钮顺序" class="headerlink" title="按钮顺序"></a>按钮顺序</h4><ul>
+<li>按钮顺序<ul>
+<li>推荐操作是阅读的起点，折叠内容始终在最右侧。</li>
+<li>对话习惯：按钮放置顺序类似于电脑和用户的对话，优先询问用户可能需要执行的操作，或你希望用户执行的操作，最后向用户提供存在风险的操作。</li>
+<li>方向性含义：例如，具有返回意义的按钮，应该放在左侧，暗示其方向是回到之前，例如上一步。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690797654136.png" class>
+
+<ul>
+<li><p>按钮组</p>
+<ul>
+<li>多个按钮形成一组时，将按钮排列在一起即可。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690859825356.png" class>
+</li>
+<li><p>按钮顺序排列</p>
+<ul>
+<li>业务逻辑：「推进」进程的操作。例如：编辑、新建、发布、保存、取消、撤回等；</li>
+<li>视图控制：控制内容展示的形式。例如：全屏、表格密度、放大缩小、布局控制等；</li>
+<li>其他：刷新、分享、设置等；</li>
+<li>溢出：被折叠的操作，若进行响应式设计，从右往左折叠至溢出操作。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690798168122.png" class>
+</li>
+<li><p>按钮分组</p>
+<ul>
+<li>当需要布置的按钮数量过多，可以把相关的动作组成一组，并采用相似的视觉设计。当某一个按钮是首要动作时仍可使用主按钮强调。</li>
+<li>按主次折叠部分按钮</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690798271422.png" class>
+
+<ul>
+<li>平铺每个按钮：优先推荐通过间距来区隔分组，也可以使用分割线来区隔视觉相似的按钮组。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690859709578.png" class>
+
+<div class="note primary no-icon flat"><h3 id="数据录入"><a href="#数据录入" class="headerlink" title="数据录入"></a>数据录入</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：多种多样的文本录入和选择录入方式帮助用户更加清晰和高效的完成这项体验。
+</li>
+<li><h4 id="文本录入"><a href="#文本录入" class="headerlink" title="文本录入"></a><strong>文本录入</strong></h4><ul>
+<li>文本框<ul>
+<li>输入较少的字符总数，使用单行的输入形式。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785507410.png" class>
+
+<ul>
+<li>文本域<ul>
+<li>录入长篇幅的单一的文本使用多行的文本区域。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785507410.png" class>
+
+<ul>
+<li>提示与帮助<ul>
+<li>为提升数据录入效率，通常可以在输入框内增加暗提示以帮助提醒用户。</li>
+</ul>
+</li>
+</ul>
+<p>基本样式<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785566249.png" class></p>
+<p>当说明文案较长时，你可以使用一个「信息」图标或者提示工具。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785603089.png" class></p>
+<ul>
+<li>搜索<ul>
+<li>搜索可以让用户在巨大的信息池中缩小目标范围，并快速获取需要的信息。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785640296.png" class>
+</li>
+<li><h4 id="选择录入"><a href="#选择录入" class="headerlink" title="选择录入"></a><strong>选择录入</strong></h4><ul>
+<li>单选框<ul>
+<li>单选按钮允许用户从多个选项中选择一个选项。Radio 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785657840.png" class>
+
+<ul>
+<li><p>复选框</p>
+<ul>
+<li>复选框用于在一组可选项中进行多项选择时。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785680286.png" class>
+</li>
+<li><p>开关</p>
+<ul>
+<li>用于切换单个选项的状态。「开关」的内联标签应该显示清楚，例如：禁用&#x2F;启用，不允许&#x2F;允许等。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785695280.png" class>
+
+<ul>
+<li><p>选择列表</p>
+<ul>
+<li>选择列表（通常称为下拉菜单）允许用户从列表中选择一个选项或多个选项，为用户在选项的数量上提供了更多的灵活性。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785719938.png" class>
+</li>
+<li><p>滑块选择</p>
+<ul>
+<li>滑块选择可以在连续或间断的区间内，通过滑动锚点来选择一个合适的数值。这种交互特性使得它在设置诸如音量，亮度，色彩饱和度等需要反映强度等级的选项时是一种极好的选择。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785735366.png" class>
+</li>
+<li><p>穿梭框</p>
+<ul>
+<li>穿梭框用直观的方式在两栏中移动元素，完成选择行为。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785753144.png" class>
+</li>
+<li><p>日期选择器</p>
+<ul>
+<li>日期选择器为用户提供了一种可视化的方式去浏览和选择一个日期或者日期范围。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785770497.png" class>
+</li>
+<li><p>文件上传</p>
+<ul>
+<li>上传是将本地的相应信息(包含本地和云储存)通过网页或者上传工具发布到远程服务器上的过程。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785788077.png" class>
+</li>
+<li><p>拖拽上传</p>
+<ul>
+<li>把文件拖入指定区域，完成上传，同样支持点击上传。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785804233.png" class></li>
+</ul>
+</li>
+</ul>
+<div class="note primary no-icon flat"><h3 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：合适的数据展示方式可以帮助用户快速地定位和浏览数据，以及更高效得协同工作。
+</li>
+<li><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a><strong>表格</strong></h4><ul>
+<li>展现数据最为清晰、高效，使信息之间更易于对比，大大提升了用户对信息的接收效率和理解程度。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785880534.png" class>
+
+<ul>
+<li><h4 id="折叠面板"><a href="#折叠面板" class="headerlink" title="折叠面板"></a><strong>折叠面板</strong></h4><ul>
+<li>折叠面板通过对信息的分组和收纳，指引用户递进式的获取信息，使界面保持整洁的同时增加空间的有效利用率。</li>
+<li>这类组件在导航中大量使用，同时也适合冗长的、无规则的内容管理。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785895243.png" class>
+
+<ul>
+<li><h4 id="卡片"><a href="#卡片" class="headerlink" title="卡片"></a><strong>卡片</strong></h4><ul>
+<li>卡片是一种承载信息的容器，对可承载的内容类型无过多限制，它让一类信息集中化，增强区块感的同时更易于操作；卡片通常以网格或矩阵的方式排列，传达相互之间的层级关系。适合较为轻量级和个性化较强的信息区块展示。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785913101.png" class>
+
+<ul>
+<li><h4 id="走马灯"><a href="#走马灯" class="headerlink" title="走马灯"></a><strong>走马灯</strong></h4><ul>
+<li>作为一组平级内容的并列展示模式，常用于图片或卡片轮播，可由用户主动触发或者系统自动轮播。适合用于官网首页、产品介绍页等展示型区块。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785929612.png" class>
+
+<ul>
+<li><h4 id="树形控件"><a href="#树形控件" class="headerlink" title="树形控件"></a><strong>树形控件</strong></h4><ul>
+<li>通过逐级大纲的形式来展现信息的层级关系，高效且具有极佳的视觉可视性，使得整体信息框架一目了然。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785940990.png" class>
+
+<ul>
+<li><h4 id="时间轴"><a href="#时间轴" class="headerlink" title="时间轴"></a><strong>时间轴</strong></h4><ul>
+<li>垂直展示的时间流信息，一般按照时间倒叙记录事件，追踪用户当下以及过去做了什么。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690785965143.png" class>
+
+<div class="note primary no-icon flat"><h3 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：帮助用户了解当前要做什么，为下一步行为做参考，了解操作后所产生的结果 ，当用户和系统需要交互时，使用不同的模式来反馈信息或结果。当设计者使用反馈或者自定义一些反馈时，请注意：
+
+<ul>
+<li>为用户在各个阶段提供必要、积极、即时的反馈；</li>
+<li>避免过度反馈，以免给用户带来不必要的打扰，能够及时看到效果的、简单的操作，可以省略反馈提示。</li>
+<li>任何一个产品，即使用户界面做的再好，也离不开用户引导和信息提示。提示信息是用来告诉用户需要知道什么、采取什么样行动的内容。</li>
+</ul>
+</li>
+<li><h4 id="警告信息"><a href="#警告信息" class="headerlink" title="警告信息"></a>警告信息</h4><ul>
+<li>是一种非阻碍式的信息展示，它不打断用户的当前操作，一般停留至页面某个位置（优先顶部），非浮层的静态展现形式，始终展现，不会自动消失，用户可以点击关闭（关闭按钮可根据业务需要增加或隐藏。）。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786040263.png" class>
+
+<ul>
+<li><h4 id="通知提醒"><a href="#通知提醒" class="headerlink" title="通知提醒"></a>通知提醒</h4><ul>
+<li>系统主动推送的重要的全局性通知信息，在系统右上角显示。</li>
+</ul>
+</li>
+</ul>
+<p>较为复杂的通知内容时使用。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786054016.png" class></p>
+<ul>
+<li><h4 id="文字提示"><a href="#文字提示" class="headerlink" title="文字提示"></a>文字提示</h4><ul>
+<li>用于精确地描述被指向的对象，例如图标、图形、链接等，鼠标移入则显示提示，移出消失，不承载复杂文本和操作。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786102279.png" class>
+
+<p><img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/myblog\blog\source_posts\设计价值观升级版本\1690786102279.png" alt="1690786102279"></p>
+<ul>
+<li><h4 id="过程反馈"><a href="#过程反馈" class="headerlink" title="过程反馈"></a>过程反馈</h4><ul>
+<li>操作过程中尽可能将状态的反馈给用户，即时的响应会给用户增加信赖感。<ul>
+<li>若加载时间较长，应提供取消操作。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>当用户不必等待较长时间的加载时使用。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786114801.png" class></p>
+<p>在操作需要较长时间才能完成时使用，显示该操作的当前进度和状态。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786356992.png" class></p>
+<ul>
+<li><h4 id="录入反馈"><a href="#录入反馈" class="headerlink" title="录入反馈"></a>录入反馈</h4><ul>
+<li>操作过程中可通过不同的校验规则和形式，让用户及时发现并纠正错误。<ul>
+<li>反馈文字紧跟着要说明的区块（反馈内容一般是错误说明），不自动消失（当用户进行相应的交互操作后才消失）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786131644.png" class>
+
+<ul>
+<li><h4 id="气泡确认框"><a href="#气泡确认框" class="headerlink" title="气泡确认框"></a>气泡确认框</h4><ul>
+<li>目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，询问用户。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786143259.png" class>
+
+<ul>
+<li><h4 id="结果反馈"><a href="#结果反馈" class="headerlink" title="结果反馈"></a>结果反馈</h4><ul>
+<li>操作过程中尽可能将状态的反馈给用户，即时的响应会给用户增加信赖感。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786158056.png" class>
+
+<ul>
+<li><h4 id="对话框反馈"><a href="#对话框反馈" class="headerlink" title="对话框反馈"></a>对话框反馈</h4><ul>
+<li>通过一个操作引发的反馈浮层位于页面中心，反馈内容可通过确认或取消按钮进行关闭，用户在反馈层出现时不可进行任何的操作，用于重要的反馈。<ul>
+<li>除失败时避免显示不必要的提醒弹窗。弹窗是很强的反馈机制，只有在传递非常重要，且可操作的信息时才需要使用它。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786172897.png" class>
+
+<ul>
+<li><h4 id="徽标数"><a href="#徽标数" class="headerlink" title="徽标数"></a>徽标数</h4><ul>
+<li>用于聚合型的消息提示，一般出现在通知图标或头像的右上角，通过醒目的视觉形式吸引用户眼球<ul>
+<li>相对重要和用户关联度更高的信息提示，使用数字精准提示；权重不高和不是用户特别关心的消息提示，使用红点做提示。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>当有 icon 的情况时一般居于 icon 右上角；无 icon 的情况下一般位于标题后侧。<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690786066706.png" class></p>
+<div class="note primary no-icon flat"><h3 id="文案"><a href="#文案" class="headerlink" title="文案"></a>文案</h3></div>
+
+<ul>
+<li><mark class="hl-label red">目的</mark> ：精准、清晰的语言会更容易让用户理解，合适的语气更容易让用户建立信任感。以下几点需要注意：
+
+<ul>
+<li>从用户角度出发</li>
+<li>表述一致</li>
+<li>重要的信息放在显著位置</li>
+<li>专业、精准、完整</li>
+<li>精简、友好、正面</li>
+</ul>
+</li>
+<li><h4 id="语言"><a href="#语言" class="headerlink" title="语言"></a><strong>语言</strong></h4><ul>
+<li><p>明确表述立足点</p>
+<ul>
+<li>在表述内容时，关注点应该是用户和他们能用你的产品做什么，而不是你和你的产品在为他们做什么，所以内容表述的立足点很重要。</li>
+<li>既然以用户为中心，文案就应该尽量以用户为主体来写作。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858418076.png" class>
+</li>
+<li><p>精简语句</p>
+<ul>
+<li><p>省略无用词汇，不重复用户已知事实；在绝大多数交互场景下，都无需界面描述出全部的细节。</p>
+<p>尽量提供简短、易于快速获取的内容。</p>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858446800.png" class></li>
+</ul>
+</li>
+<li><p>使用用户熟悉的语言</p>
+<ul>
+<li>使用简单、直接、易于理解的词汇，让内容和指示更容易被用户接受和理解。</li>
+<li>间接、暧昧模糊的说法，生僻和过于「文雅」的用词，会增加用户的认知负荷，所以应当尽量避免使用这类用户无法识别的词汇。</li>
+</ul>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858515504.png" class>
+
+<ul>
+<li><p>表述一致</p>
+<ul>
+<li>描述同一个事物的词汇要保持统一;</li>
+<li>上下文的语法、语种、语序要保持统一;</li>
+<li>操作的名称和目标页面标题的名称保持一致。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858544293.png" class>
+
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858562832.png" class>
+</li>
+<li><p>重要的信息放在显著位置</p>
+<ul>
+<li>让用户第一眼看到最重要的内容，不用到段落中寻找。</li>
+</ul>
+</li>
+<li><p>完整、直接得阐述信息</p>
+<ul>
+<li>当我们希望用户进行一个操作时，要专注于用户能得到什么，以及用户的感受。在操作前引导告知用户操作的目的或重要性，能促进用户更愿意去执行。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858589596.png" class>
+
+<ul>
+<li>报错是 UI 中常见的功能，它同样是用户体验中不可小视的组成部分。当用户填写的内容出错的时候，你的报错信息应当符合用户的认知，用易于理解的方式表述出来。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858612163.png" class>
+</li>
+<li><p>用词精准完整</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th align="left">使用</th>
+<th align="left">不使用</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">其他</td>
+<td align="left">其它</td>
+<td align="left">「其他」的应用范围更广</td>
+</tr>
+<tr>
+<td align="left">抱歉</td>
+<td align="left">对不起</td>
+<td align="left">如果是我们系统造成的结果，可以使用「抱歉」，如果是用户自己造成的结果，不能使用。</td>
+</tr>
+<tr>
+<td align="left">登录</td>
+<td align="left">登陆</td>
+<td align="left">登记记录用户输入的注册账号和密码。</td>
+</tr>
+<tr>
+<td align="left">此</td>
+<td align="left">该</td>
+<td align="left">当要表达当前事物时，「此」更加明确。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="语气"><a href="#语气" class="headerlink" title="语气"></a><strong>语气</strong></h4><ul>
+<li><p>拉进彼此的距离</p>
+<ul>
+<li>直接使用「你」、「我」来和用户对话，与用户建立亲密感。避免使用「您」，让用户感觉太过疏远。</li>
+<li>不要在同一个句式中混用「你」和「我」，交互中指代混乱会让用户相当纠结。</li>
+</ul>
+</li>
+<li><p>友好、尊重用户</p>
+<ul>
+<li>多给用户支持与鼓励，不要命令和强迫用户。</li>
+<li>如果你想留住你的用户，当出错的时候就不要责怪用户。专注于解决问题，而不是指责。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858680424.png" class>
+</li>
+<li><p>表述不应过于极端</p>
+<ul>
+<li>不要使用过于绝对的表述，这样会让用户觉得不适。</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690858703386.png" class></li>
+</ul>
+</li>
+<li><h4 id="大小写和标点符号"><a href="#大小写和标点符号" class="headerlink" title="大小写和标点符号"></a><strong>大小写和标点符号</strong></h4><ul>
+<li>英文名词大小写规范<ul>
+<li>产品名称全称，首字母大写。产品名称缩写需要全部大写，如：ESC、SLB 等；</li>
+</ul>
+</li>
+<li>统计数据使用阿拉伯数字</li>
+<li>省略不必要的标点<ul>
+<li>为了帮助用户更加高效地扫视文本内容，可以省略不必要的断句点。</li>
+</ul>
+</li>
+<li>以下元素单独出现时可以省略标点：<ol>
+<li>标签</li>
+<li>标题</li>
+<li>输入框下的提示</li>
+<li>悬停文本中的提示</li>
+<li>表格中的句子</li>
+</ol>
+</li>
+<li>以下元素单独出现时需要加上标点：<ol>
+<li>多句或多段的文案和列表内容。</li>
+<li>任何文字链前的句子。</li>
+</ol>
+</li>
+</ul>
+<img src="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/1690859218791.png" class>
+</li>
+<li><h4 id="谨慎使用感叹号"><a href="#谨慎使用感叹号" class="headerlink" title="谨慎使用感叹号"></a><strong>谨慎使用感叹号</strong></h4><ul>
+<li>感叹号会让文案显得过于激动，容易让气氛变得过于紧张。<ul>
+<li>当向用户表达问候或祝贺时，使用「！」是合理的语境，例如「欢迎回到社区！」。</li>
+</ul>
+</li>
+<li>基本标点规则</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">标点名称</th>
+<th align="left">字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">空格</td>
+<td align="left"></td>
+<td align="left">段落句子中的链接和文字之间增加空格； 全角字符和半角字符搭配时，需要添加空格，如：两个、2 个、50%。</td>
+</tr>
+<tr>
+<td align="left">句号</td>
+<td align="left">。</td>
+<td align="left">以下情况中不使用句号：输入框下的提示；表格中的句子；句末为文字链（链接前使用句号）；按钮和标题。</td>
+</tr>
+<tr>
+<td align="left">感叹号</td>
+<td align="left">！</td>
+<td align="left">只在需要表达强烈情感的情况下使用。</td>
+</tr>
+<tr>
+<td align="left">连接号</td>
+<td align="left">-</td>
+<td align="left">不使用中文全角的连接号。如：2012-11-12。</td>
+</tr>
+<tr>
+<td align="left">省略号</td>
+<td align="left">…</td>
+<td align="left">使用半角的「…」为省略号。</td>
+</tr>
+<tr>
+<td align="left">隐藏符号</td>
+<td align="left">*</td>
+<td align="left">多用于替换显示隐私信息。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">YSY</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/">http://example.com/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Welcome to TonyChai's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/antd.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/07/25/JavaScrip%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/" title="JavaScrip资源网站汇总"><img class="cover" src="/img/%E5%A3%81%E7%BA%B8.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JavaScrip资源网站汇总</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/zaizai.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YSY</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E4%B8%8A%E7%9C%8B"><span class="toc-number">1.</span> <span class="toc-text">从设计价值观上看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E6%99%B0"><span class="toc-number">1.1.</span> <span class="toc-text">清晰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%87%B4"><span class="toc-number">1.2.</span> <span class="toc-text">一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%8F%E4%B9%89%E6%84%9F"><span class="toc-number">1.3.</span> <span class="toc-text">意义感</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E9%95%BF%E6%80%A7"><span class="toc-number">1.4.</span> <span class="toc-text">生长性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8A%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text">从设计原则上看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8A%E6%97%B6%E5%8F%8D%E9%A6%88"><span class="toc-number">2.1.</span> <span class="toc-text">及时反馈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B4%E8%BF%91%E7%8E%B0%E5%AE%9E"><span class="toc-number">2.2.</span> <span class="toc-text">贴近现实</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%87%B4%E6%80%A7"><span class="toc-number">2.3.</span> <span class="toc-text">系统一致性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E6%AD%A2%E9%94%99%E8%AF%AF%E5%8F%91%E7%94%9F"><span class="toc-number">2.4.</span> <span class="toc-text">防止错误发生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%B5%E4%BB%8E%E4%B9%A0%E6%83%AF"><span class="toc-number">2.5.</span> <span class="toc-text">遵从习惯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%81%E5%87%BA%E9%87%8D%E7%82%B9"><span class="toc-number">2.6.</span> <span class="toc-text">突出重点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%B8%AE%E5%8A%A9"><span class="toc-number">2.7.</span> <span class="toc-text">错误帮助</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E6%80%A7%E5%8C%96%E5%B8%AE%E5%8A%A9"><span class="toc-number">2.8.</span> <span class="toc-text">人性化帮助</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8A%E7%9C%8B"><span class="toc-number">3.</span> <span class="toc-text">从设计模式上看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%89%B2%E5%BD%A9"><span class="toc-number">3.1.1.</span> <span class="toc-text">色彩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">3.1.2.</span> <span class="toc-text">字体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%92%AE"><span class="toc-number">3.2.</span> <span class="toc-text">按钮</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E6%8C%89%E9%92%AE"><span class="toc-number">3.2.1.</span> <span class="toc-text">常规按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%8C%89%E9%92%AE"><span class="toc-number">3.2.2.</span> <span class="toc-text">特殊按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E5%BC%BA%E8%B0%83"><span class="toc-number">3.2.3.</span> <span class="toc-text">按钮强调</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E9%A1%BA%E5%BA%8F"><span class="toc-number">3.2.4.</span> <span class="toc-text">按钮顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5"><span class="toc-number">3.3.</span> <span class="toc-text">数据录入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%BD%95%E5%85%A5"><span class="toc-number">3.3.1.</span> <span class="toc-text">文本录入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%BD%95%E5%85%A5"><span class="toc-number">3.3.2.</span> <span class="toc-text">选择录入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA"><span class="toc-number">3.4.</span> <span class="toc-text">数据展示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-number">3.4.1.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0%E9%9D%A2%E6%9D%BF"><span class="toc-number">3.4.2.</span> <span class="toc-text">折叠面板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%A1%E7%89%87"><span class="toc-number">3.4.3.</span> <span class="toc-text">卡片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%B0%E9%A9%AC%E7%81%AF"><span class="toc-number">3.4.4.</span> <span class="toc-text">走马灯</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%91%E5%BD%A2%E6%8E%A7%E4%BB%B6"><span class="toc-number">3.4.5.</span> <span class="toc-text">树形控件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%BD%B4"><span class="toc-number">3.4.6.</span> <span class="toc-text">时间轴</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E9%A6%88"><span class="toc-number">3.5.</span> <span class="toc-text">反馈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AD%A6%E5%91%8A%E4%BF%A1%E6%81%AF"><span class="toc-number">3.5.1.</span> <span class="toc-text">警告信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E7%9F%A5%E6%8F%90%E9%86%92"><span class="toc-number">3.5.2.</span> <span class="toc-text">通知提醒</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%8F%90%E7%A4%BA"><span class="toc-number">3.5.3.</span> <span class="toc-text">文字提示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E5%8F%8D%E9%A6%88"><span class="toc-number">3.5.4.</span> <span class="toc-text">过程反馈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%95%E5%85%A5%E5%8F%8D%E9%A6%88"><span class="toc-number">3.5.5.</span> <span class="toc-text">录入反馈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%94%E6%B3%A1%E7%A1%AE%E8%AE%A4%E6%A1%86"><span class="toc-number">3.5.6.</span> <span class="toc-text">气泡确认框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%8F%8D%E9%A6%88"><span class="toc-number">3.5.7.</span> <span class="toc-text">结果反馈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%AF%9D%E6%A1%86%E5%8F%8D%E9%A6%88"><span class="toc-number">3.5.8.</span> <span class="toc-text">对话框反馈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%BD%E6%A0%87%E6%95%B0"><span class="toc-number">3.5.9.</span> <span class="toc-text">徽标数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%88"><span class="toc-number">3.6.</span> <span class="toc-text">文案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80"><span class="toc-number">3.6.1.</span> <span class="toc-text">语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B0%94"><span class="toc-number">3.6.2.</span> <span class="toc-text">语气</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E5%92%8C%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7"><span class="toc-number">3.6.3.</span> <span class="toc-text">大小写和标点符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%A8%E6%85%8E%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%B9%E5%8F%B7"><span class="toc-number">3.6.4.</span> <span class="toc-text">谨慎使用感叹号</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/" title="设计价值观"><img src="/img/antd.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计价值观"/></a><div class="content"><a class="title" href="/2023/07/26/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E5%8D%87%E7%BA%A7%E7%89%88%E6%9C%AC/" title="设计价值观">设计价值观</a><time datetime="2023-07-26T08:49:14.000Z" title="发表于 2023-07-26 16:49:14">2023-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/25/JavaScrip%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/" title="JavaScrip资源网站汇总"><img src="/img/%E5%A3%81%E7%BA%B8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScrip资源网站汇总"/></a><div class="content"><a class="title" href="/2023/07/25/JavaScrip%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB/" title="JavaScrip资源网站汇总">JavaScrip资源网站汇总</a><time datetime="2023-07-25T02:57:52.000Z" title="发表于 2023-07-25 10:57:52">2023-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/19/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E4%BC%98%E5%8C%96%E7%89%88%E6%9C%AC/" title="设计价值观"><img src="/img/antd.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计价值观"/></a><div class="content"><a class="title" href="/2023/07/19/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82%E4%BC%98%E5%8C%96%E7%89%88%E6%9C%AC/" title="设计价值观">设计价值观</a><time datetime="2023-07-19T11:48:55.000Z" title="发表于 2023-07-19 19:48:55">2023-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/17/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82/" title="设计价值观"><img src="/img/antd.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计价值观"/></a><div class="content"><a class="title" href="/2023/07/17/%E8%AE%BE%E8%AE%A1%E4%BB%B7%E5%80%BC%E8%A7%82/" title="设计价值观">设计价值观</a><time datetime="2023-07-17T11:48:55.000Z" title="发表于 2023-07-17 19:48:55">2023-07-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/antd.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By YSY</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,富强,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="16px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
